@@ -30,7 +30,7 @@ print('PASSED')
 # Plot
 n_trials = 5
 n_arrays = 20
-a_lens = np.logspace(0, 4, num=n_arrays).astype(int)
+a_lens = np.logspace(0, 3, num=n_arrays).astype(int)
 
 timings = np.zeros(len(a_lens))
 
@@ -47,9 +47,9 @@ for i, a_len in enumerate(a_lens):
         
     timings[i] = avg_timing
     
-plt.plot(a_lens**2, timings * 10**6)
-plt.title('Selection sort Exec. Time')
-plt.xlabel('n^2')
+plt.plot(a_lens, timings * 10**6)
+plt.title('Selection sort Exec. Time - O(n^2)')
+plt.xlabel('n')
 plt.ylabel('us')
 plt.savefig('python/selection_sort/complexity.png')
 plt.show()
